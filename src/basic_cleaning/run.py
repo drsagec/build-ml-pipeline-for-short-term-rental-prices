@@ -47,9 +47,9 @@ def go(args):
     input_artifact_df['last_review'] = pd.to_datetime(
         input_artifact_df['last_review'])
 
-    # if ('longitude' in input_artifact_df.columns) and ('latitude' in input_artifact_df.columns):
-    #     idx = input_artifact_df['longitude'].between(-74.25, -73.50) & input_artifact_df['latitude'].between(40.5, 41.2)
-    #     input_artifact_df = input_artifact_df[idx].copy()
+    if ('longitude' in input_artifact_df.columns) and ('latitude' in input_artifact_df.columns):
+        idx = input_artifact_df['longitude'].between(-74.25, -73.50) & input_artifact_df['latitude'].between(40.5, 41.2)
+        input_artifact_df = input_artifact_df[idx].copy()
 
     logger.info(f"Saving as {args.output_artifact} locally")
     input_artifact_df.to_csv(f"{args.output_artifact}", index=False)
