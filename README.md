@@ -38,6 +38,18 @@ Links to solutions:
 2. W&B public - https://wandb.ai/sagechhetri/nyc_airbnb?workspace=user-sagechhetri 
 3. ML Ops Env Setup and continous deployment (easiest approach)- using collab - find the file MLOps_rental_price.ipynb in github and run it using google collab. Make sure to turn GPU on. You can go to runtime menu in collab and turn on GPU.  
 
+### DISCUSSION : Why step 3 above ?
+Lesson learned : I tried WSL in windows machine- it continued to fail- I wasted over a week to setup config
+I then ran using macbook - ran fine but overleaded it. 
+In both cases some of the versions of dependencies failed so used the latest version- the latest release in github contains it
+. conda-forge channel killed the RAM so remved in released version, check config.yaml
+
+So, decided to help others, ensuring they don't have to waste time in setup (as it happened to me- over two weeks wasted just on setup). Hope helped!
+
+Make a copy of MLOps_rental_price.ipynb file and try to match output presented there. All steps should pass as you see in logs in MLOps_rental_price.ipynb.
+
+
+
 # Solution steps
 ## Preliminary steps
 ### Fork the Starter kit
