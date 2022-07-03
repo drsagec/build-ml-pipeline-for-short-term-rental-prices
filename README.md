@@ -9,6 +9,7 @@ In this project you will build such a pipeline.
 ## Table of contents
 
 - [Introduction](#build-an-ML-Pipeline-for-Short-Term-Rental-Prices-in-NYC)
+- [Public solution](#public-solution)
 - [Preliminary steps](#preliminary-steps)
   * [Fork the Starter Kit](#fork-the-starter-kit)
   * [Create environment](#create-environment)
@@ -31,6 +32,13 @@ In this project you will build such a pipeline.
   * [Train the model on a new data sample](#train-the-model-on-a-new-data-sample)
 - [Cleaning up](#cleaning-up)
 
+## Public solution
+Links to solutions:
+1. Github (public)- https://github.com/drsagec/build-ml-pipeline-for-short-term-rental-prices 
+2. W&B public - https://wandb.ai/sagechhetri/nyc_airbnb?workspace=user-sagechhetri 
+3. ML Ops Env Setup and continous deployment (easiest approach)- using collab - find the file MLOps_rental_price.ipynb in github and run it using google collab. Make sure to turn GPU on. You can go to runtime menu in collab and turn on GPU.  
+
+# Solution steps
 ## Preliminary steps
 ### Fork the Starter kit
 Go to [https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices.git](https://github.com/udacity/build-ml-pipeline-for-short-term-rental-prices.git)

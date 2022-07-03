@@ -24,10 +24,16 @@ def go(args):
     logger.info("Downloading artifacts")
     # Download input artifact. This will also log that this script is using this
     # particular version of the artifact
-    model_local_path = run.use_artifact(args.mlflow_model).download()
+    model_local_path = run.use_artifact(
+        f"{args.mlflow_model}:latest").download()
 
     # Download test dataset
-    test_dataset_path = run.use_artifact(args.test_dataset).file()
+    try:
+        test_dataset_path = run.use_artifact(f"{args.test_dataset}:prod").file()
+        logger.info(f"Using prod  {args.test_dataset} ")
+    except:
+        test_dataset_path = run.use_artifact(f"{args.test_dataset}:latest").file()
+        logger.info(f"Unable to find prod, so using latest for  {args.test_dataset} ")
 
     # Read test dataset
     X_test = pd.read_csv(test_dataset_path)
@@ -52,18 +58,19 @@ def go(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Test the provided model against the test dataset")
+    parser = argparse.ArgumentParser(
+        description="Test the provided model against the test dataset")
 
     parser.add_argument(
         "--mlflow_model",
-        type=str, 
+        type=str,
         help="Input MLFlow model",
         required=True
     )
 
     parser.add_argument(
         "--test_dataset",
-        type=str, 
+        type=str,
         help="Test dataset",
         required=True
     )
